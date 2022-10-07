@@ -29,12 +29,6 @@ phases:
       - python --version
       - echo 'export PATH=$PWD/:$PATH' >> $HOME/.bashrc
       - echo `kubectl version --short --client`
-      - wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
-      - tar xzf Python-3.7.0.tgz
-      - cd Python-3.7.0
-      - ./configure --enable-optimizations
-      - make altinstall
-      - curl -0 https://bootstrap.pypa.io/get-pip.py
       - python -m pip install --upgrade --force pip
       - apt-get update && apt-get -y install jq  && pip install --upgrade awscli
   pre_build:
